@@ -1,0 +1,84 @@
+.wrestling-ring-image-container {
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	z-index: -1;
+}
+.wrestling-ring-image-container img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	min-width: 50%;
+	min-height: 50%;
+}
+
+.text-and-button-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 3%;
+    text-align: center;
+}
+
+.textbox-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #f3df15;
+	outline: 7px solid #7ac1da;
+	border-radius: 5px;
+    box-shadow: 0 0 25px black;
+	min-width: 50%;
+    /* check height after functionality works */
+}
+
+.textbox {
+	border-radius: 5px;
+	/* width: 40em; */
+    font-size: 180%;
+    padding: 25px;
+}
+
+.rumble-button {
+	background-color: #f3df15;
+	outline: 7px solid #7ac1da;
+	margin-top: 5%;
+	border: none;
+    width: 15%;
+    height: 2em;
+    border-radius: 5px;
+	transition: 0.2s;
+    font-size: 1.5em;
+    font-weight: 900;
+    z-index: 1;
+}
+
+.rumble-button:hover {
+	cursor: pointer;
+	filter: brightness(115%);
+	transform: scale(1.05);
+	font-size: 2.25em;
+}
+
+.wrestlers-container {
+    width: 100%;
+	display: flex;
+	/* align-items: center; */
+	justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    padding: 0 1%;
+}
+
+/* .wrestler-container {
+} */
+
+.wrestlers {
+	height: 35em;
+}

@@ -1,0 +1,30 @@
+header {
+	width: 100%;
+	background-color: black;
+	display: flex;
+	align-items: baseline;
+	box-shadow: 0 0 15px black;
+	z-index: 2;
+}
+
+.wrestler-container-left,
+.wrestler-container-right {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+.wrestler-container-left {
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
+
+.wrestler {
+	height: auto;
+	width: 17%;
+}
+
+.wwf-logo {
+	height: auto;
+	width: 20%;
+}

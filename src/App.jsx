@@ -1,34 +1,73 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import './App.css';
+import Header from './components/Header/Header';
+import LandingPage from './components/LandingPage/LandingPage';
+import EnterTheRing from './components/EnterTheRing/EnterTheRing';
+import { Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import fetchData from '../apiCalls';
+import './App.css'
 
-function App() {
-	const [count, setCount] = useState(0);
+const App = () => {
+	const [wrestlers, setWrestlers] = useState();
+	const [moves, setMoves] = useState();
+
+	useEffect(() => {
+		fetchData().then(({ data }) => {
+			const { wrestlers, moves } = data;
+			setWrestlers(wrestlers);
+			setMoves(moves[0]);
+		});
+	}, []);
+
+	// function getRandomWrestlers() {
+	// 	let wrestlerNames = wrestlers.map((wrestler) => wrestler.name);
+
+	// 	return wrestlerNames[
+	// 		Math.floor(Math.random(wrestlerNames) * wrestlerNames.length)
+	// 	];
+	// }
+
+	// function getRandomWrestlers() {
+	// 	return wrestlers[
+	// 		Math.floor(Math.random() * wrestlers.length)
+	// 	];
+	// }
+
+	// const handleRandomWrestlers = () => {
+	// 	while (wrestlerLeft === wrestlerRight) {
+	// 		setWrestlerRight(getRandomWrestlers());
+	// 	}
+	// 	setIsButtonClicked(true);
+	// };
 
 	return (
 		<div className="App">
-			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src="/vite.svg" className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://reactjs.org" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
+			<Routes>
+				<Route
+					path="/"
+					element={
+						<LandingPage
+						// handleRandomWrestlers={handleRandomWrestlers}
+						// isButtonClicked={isButtonClicked}
+						/>
+					}
+				/>
+				<Route
+					path="/enter-the-ring"
+					element={
+						<>
+							<Header />
+							<EnterTheRing
+								// wrestlerLeft={wrestlerLeft}
+								// wrestlerRight={wrestlerRight}
+								wrestlers={wrestlers}
+								moves={moves}
+							/>
+						</>
+					}
+				/>
+			</Routes>
 		</div>
 	);
-}
+};
 
 export default App;
