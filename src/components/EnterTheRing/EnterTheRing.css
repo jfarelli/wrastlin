@@ -64,7 +64,7 @@
 	filter: brightness(115%);
 	transform: scale(1.05);
 	font-size: 2.25em;
-    box-shadow: 0 0 35px #f3df15;
+	box-shadow: 0 0 35px #f3df15;
 }
 
 .wrestlers-container {
@@ -77,15 +77,28 @@
 	padding: 0 1%;
 }
 
-.wrestler-left-container, .wrestler-right-container {
-    position: relative;
+.wrestler-left-container,
+.wrestler-right-container {
+	position: relative;
 }
 
-.wrestler-left, .wrestler-right {
+.wrestler-left,
+.wrestler-right {
 	height: 35em;
-    transition: 0.3s;
+	transition: 0.3s;
+	animation: fadeIn 3s;
 }
 
-.wrestler-left:hover, .wrestler-right:hover {
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.wrestler-left:hover,
+.wrestler-right:hover {
 	filter: brightness(115%);
 }
