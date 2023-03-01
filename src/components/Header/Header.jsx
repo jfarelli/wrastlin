@@ -17,6 +17,7 @@ const Header = () => {
 					alt="The Ultimate Warrior"
 				/>
 				<img className="wrestler" src={MachoMan} alt="Macho Man Randy Savage" />
+                <img className="wrestler" src={HulkHogan} alt="Hulk Hogan" />
 			</div>
 			<img
 				className="wwf-logo"
@@ -32,6 +33,7 @@ const Header = () => {
 					alt="The Ultimate Warrior"
 				/>
 				<img className="wrestler" src={MachoMan} alt="Macho Man Randy Savage" />
+                <img className="wrestler" src={HulkHogan} alt="Hulk Hogan" />
 			</div>
 		</header>
 	);

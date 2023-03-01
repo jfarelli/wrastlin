@@ -1,5 +1,11 @@
+@font-face {
+	font-family: 'WRESTLEMANIA';
+	src: local('WRESTLEMANIA'), url(./fonts/WRESTLEMANIA.ttf);
+}
+
 * {
 	box-sizing: border-box;
+    font-family: 'WRESTLEMANIA'
 }
 
 body {

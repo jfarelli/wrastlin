@@ -2,7 +2,7 @@ import './LandingPage.css';
 import WWFLogo from '../../assets/wwf-logo.png';
 import { Link } from 'react-router-dom';
 
-const LandingPage = ({ getRandomWrestler, isButtonClicked }) => {
+const LandingPage = () => {
 	return (
 		<div className="landing-page-container">
 			<img
@@ -12,9 +12,8 @@ const LandingPage = ({ getRandomWrestler, isButtonClicked }) => {
 			/>
 			<Link to="/enter-the-ring">
 				<button
-					onClick={getRandomWrestler}
+					// onClick={getRandomWrestlers}
 					className="enter-button"
-					disabled={isButtonClicked}
 				>
 					ENTER THE RING
 				</button>

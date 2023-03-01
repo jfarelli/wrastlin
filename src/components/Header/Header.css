@@ -11,7 +11,7 @@ header {
 .wrestler-container-right {
 	display: flex;
 	flex-wrap: nowrap;
-	justify-content: center;
+	justify-content: space-evenly;
 }
 
 .wrestler-container-left {
@@ -21,7 +21,7 @@ header {
 
 .wrestler {
 	height: auto;
-	width: 17%;
+	width: 14%;
 	transition: 0.3s;
 }
 

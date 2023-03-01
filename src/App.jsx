@@ -1,34 +1,41 @@
 import Header from './components/Header/Header';
 import LandingPage from './components/LandingPage/LandingPage';
 import EnterTheRing from './components/EnterTheRing/EnterTheRing';
+import LoadingPage from './components/LoadingPage/LoadingPage';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import fetchData from '../apiCalls';
 import './App.css';
+import './fonts/WRESTLEMANIA.ttf';
 
 const App = () => {
-	const [wrestlers, setWrestlers] = useState();
-	const [moves, setMoves] = useState();
+	const [wrestlers, setWrestlers] = useState([]);
+	const [moves, setMoves] = useState([]);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		fetchData().then(({ data }) => {
-			const { wrestlers, moves } = data;
-			setWrestlers(wrestlers);
-			setMoves(moves[0]);
-		});
+		setLoading(true);
+		fetchData()
+			.then(({ data }) => {
+				const { wrestlers, moves } = data;
+				setWrestlers(wrestlers);
+				setMoves(moves[0]);
+			})
+			.finally(() => {
+				setLoading(false);
+			});
 	}, []);
+
+	// Let's start by getting a random wrestler for the left and right hand side of the ring
+	// clicking the 'Enter the ring' button takes you to <EnterTheRing />
+	// The display should be a random left and right wrestler
+	// Top name should match the left and vise-versa
 
 	// function getRandomWrestlers() {
 	// 	let wrestlerNames = wrestlers.map((wrestler) => wrestler.name);
 
 	// 	return wrestlerNames[
 	// 		Math.floor(Math.random(wrestlerNames) * wrestlerNames.length)
-	// 	];
-	// }
-
-	// function getRandomWrestlers() {
-	// 	return wrestlers[
-	// 		Math.floor(Math.random() * wrestlers.length)
 	// 	];
 	// }
 
@@ -42,27 +49,18 @@ const App = () => {
 	return (
 		<div className="App">
 			<Routes>
-				<Route
-					path="/"
-					element={
-						<LandingPage
-						// handleRandomWrestlers={handleRandomWrestlers}
-						// isButtonClicked={isButtonClicked}
-						/>
-					}
-				/>
+				<Route path="/" element={<LandingPage />} />
 				<Route
 					path="/enter-the-ring"
 					element={
-						<>
-							<Header />
-							<EnterTheRing
-								// wrestlerLeft={wrestlerLeft}
-								// wrestlerRight={wrestlerRight}
-								wrestlers={wrestlers}
-								moves={moves}
-							/>
-						</>
+						loading ? (
+							<LoadingPage />
+						) : (
+							<>
+								<Header />
+								<EnterTheRing wrestlers={wrestlers} moves={moves} />
+							</>
+						)
 					}
 				/>
 			</Routes>
