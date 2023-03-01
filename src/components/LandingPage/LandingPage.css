@@ -2,13 +2,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .wwf-landing {
-	width: 40%;
-	position: absolute;
-	top: 20%;
+	width: 150%;
 	transition: 0.3s;
 	filter: brightness(105%);
 }
@@ -19,24 +20,23 @@
 
 .enter-button {
 	position: absolute;
-	top: 70%;
-	left: 38%;
-	padding: 10px;
-	width: 20%;
+	top: 90%;
+	left: 5%;
+	width: 100%;
 	border-radius: 5px;
 	background-color: #f3df15;
 	outline: 7px solid #7ac1da;
 	border: none;
-	font-size: 115%;
-	font-weight: bold;
+	margin-top: 20%;
+	font-size: 3em;
+	letter-spacing: 2.5px;
 	transition: 0.3s;
-	margin-top: 3%;
+    transform: translateX(-10%);
 }
 
 .enter-button:hover {
 	cursor: pointer;
 	filter: brightness(115%);
-	transform: scale(1.05);
-	font-size: 180%;
+	font-size: 400%;
 	box-shadow: 0 0 65px #f3df15;
 }

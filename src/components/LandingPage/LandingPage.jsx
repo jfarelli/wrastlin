@@ -10,7 +10,7 @@ const LandingPage = () => {
 				src={WWFLogo}
 				alt="Classic Worldwide Wrestling Federation Logo"
 			/>
-			<Link to="/enter-the-ring">
+			<Link className='link' to="/enter-the-ring">
 				<button
 					// onClick={getRandomWrestlers}
 					className="enter-button"

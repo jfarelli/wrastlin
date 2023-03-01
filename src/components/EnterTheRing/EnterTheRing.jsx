@@ -25,7 +25,7 @@ const Ring = ({ wrestlers, moves }) => {
 					<div className="textbox">
 						<h2 className="top-wrestler-name">{matchUp[0].name}</h2>
 						<p>VS.</p>
-						<h2 className="top-wrestler-name">{matchUp[1].name}</h2>
+						<h2 className="bottom-wrestler-name">{matchUp[1].name}</h2>
 					</div>
 				</div>
 				<button className="rumble-button">RUMBLE</button>

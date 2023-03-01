@@ -40,7 +40,7 @@
 
 .textbox {
 	border-radius: 5px;
-	font-size: 5em;
+	font-size: 350%;
 	line-height: 0.25em;
 	letter-spacing: 5px;
 	padding: 25px;
@@ -51,7 +51,7 @@
 }
 
 .bottom-wrestler-name {
-	margin: 0 0 5% 0;
+	margin: 8% 0 5% 0;
 }
 
 .rumble-button {
