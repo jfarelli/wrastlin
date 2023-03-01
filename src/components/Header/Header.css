@@ -22,9 +22,19 @@ header {
 .wrestler {
 	height: auto;
 	width: 17%;
+	transition: 0.3s;
+}
+
+.wrestler:hover {
+	filter: brightness(130%);
 }
 
 .wwf-logo {
 	height: auto;
 	width: 20%;
+	transition: 0.3s;
+}
+
+.wwf-logo:hover {
+	filter: brightness(115%);
 }

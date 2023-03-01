@@ -32,10 +32,10 @@ const Ring = ({ wrestlers, moves }) => {
 			</div>
 			<div className="wrestlers-container">
 				<div className="wrestler-left-container">
-					<img className="wrestlers" src={HulkHogan} alt="wrestler" />
+					<img className="wrestler-left" src={HulkHogan} alt="wrestler" />
 				</div>
 				<div className="wrestler-right-container">
-					<img className="wrestlers" src={Undertaker} alt="wrestler" />
+					<img className="wrestler-right" src={Undertaker} alt="wrestler" />
 				</div>
 			</div>
 		</div>
