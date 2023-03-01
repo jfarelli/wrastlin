@@ -22,9 +22,9 @@ const Ring = ({ wrestlers, moves }) => {
 				<div className="textbox-container">
 					<div className="textbox">
 						{/* <h2>{wrestlerLeft}</h2> */}
-                        <h2>Hulk Hogan</h2>
+						<h2>Hulk Hogan</h2>
 						<p>VS.</p>
-                        <h2>The Undertaker</h2>
+						<h2>The Undertaker</h2>
 						{/* <h2>{wrestlerRight}</h2> */}
 					</div>
 				</div>

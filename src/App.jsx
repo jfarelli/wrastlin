@@ -4,7 +4,7 @@ import EnterTheRing from './components/EnterTheRing/EnterTheRing';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import fetchData from '../apiCalls';
-import './App.css'
+import './App.css';
 
 const App = () => {
 	const [wrestlers, setWrestlers] = useState();
