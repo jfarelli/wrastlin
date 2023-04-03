@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Ring = ({ wrestlers, matchUp }) => {
-	console.log('WRESTLERS: ', wrestlers);
 
 	// const [matchUp] = useWrestlerSelect(wrestlers);
 

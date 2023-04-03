@@ -22,9 +22,11 @@ form {
 
 select {
 	text-align: center;
-	width: 10rem;
+	width: 15rem;
 	font-size: 2em;
 	z-index: 1;
+    font-size: 1.75em;
+    padding: 5px 10px;
 }
 
 .winner-container {

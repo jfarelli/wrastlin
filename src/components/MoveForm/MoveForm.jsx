@@ -1,7 +1,25 @@
 import './MoveForm.css';
 
 const MoveForm = ({ moves }) => {
-	const strikeMovesDropDown = moves.strikeMoves.map((strikeMove) => {
+	function sortNames(moveType) {
+		const sortedMoves = moveType.sort((a, b) => {
+			let nameA = a.name.toUpperCase();
+			let nameB = b.name.toUpperCase();
+
+			if (nameA < nameB) {
+				return -1;
+			}
+
+			if (nameA > nameB) {
+				return 1;
+			}
+
+			return 0;
+		});
+		return sortedMoves;
+	}
+
+	const strikeMoves = sortNames(moves.strikeMoves).map((strikeMove) => {
 		return (
 			<option
 				key={strikeMove.name}
@@ -14,7 +32,7 @@ const MoveForm = ({ moves }) => {
 		);
 	});
 
-	const holdMovesDropDown = moves.holdMoves.map((holdMove) => {
+	const holdMoves = sortNames(moves.holdMoves).map((holdMove) => {
 		return (
 			<option
 				key={holdMove.name}
@@ -27,7 +45,7 @@ const MoveForm = ({ moves }) => {
 		);
 	});
 
-	const throwMovesDropDown = moves.throwMoves.map((throwMove) => {
+	const throwMoves = sortNames(moves.throwMoves).map((throwMove) => {
 		return (
 			<option
 				key={throwMove.name}
@@ -40,7 +58,7 @@ const MoveForm = ({ moves }) => {
 		);
 	});
 
-	const aerialMovesDropDown = moves.aerialMoves.map((aerialMove) => {
+	const aerialMoves = sortNames(moves.aerialMoves).map((aerialMove) => {
 		return (
 			<option
 				key={aerialMove.name}
@@ -59,37 +77,37 @@ const MoveForm = ({ moves }) => {
 				<form>
 					<select>
 						<option value="">Strike Move</option>
-						{strikeMovesDropDown}
+						{strikeMoves}
 					</select>
 					<select>
 						<option value="">Hold Move</option>
-						{holdMovesDropDown}
+						{holdMoves}
 					</select>
 					<select>
 						<option value="">Throw Move</option>
-						{throwMovesDropDown}
+						{throwMoves}
 					</select>
 					<select>
 						<option value="">Aerial Move</option>
-						{aerialMovesDropDown}
+						{aerialMoves}
 					</select>
 				</form>
 				<form>
 					<select>
 						<option value="">Strike Move</option>
-						{strikeMovesDropDown}
+						{strikeMoves}
 					</select>
 					<select>
 						<option value="">Hold Move</option>
-						{holdMovesDropDown}
+						{holdMoves}
 					</select>
 					<select>
 						<option value="">Throw Move</option>
-						{throwMovesDropDown}
+						{throwMoves}
 					</select>
 					<select>
 						<option value="">Aerial Move</option>
-						{aerialMovesDropDown}
+						{aerialMoves}
 					</select>
 				</form>
 			</div>
