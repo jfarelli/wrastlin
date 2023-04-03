@@ -1,15 +1,13 @@
 import './EnterTheRing.css';
-import HulkHogan from '../../assets/hulk-hogan.png';
-import Undertaker from '../../assets/undertaker.png';
 import WrestlingRing from '../../assets/wrestling-ring.jpeg';
+// import useWrestlerSelect from '../../hooks/useWrestlerSelect';
 import { useState } from 'react';
-import useWrestlerSelect from '../../hooks/useWrestlerSelect';
+import { Link } from 'react-router-dom';
 
-const Ring = ({ wrestlers, moves }) => {
-	// console.log('MOVES: ', moves);
+const Ring = ({ wrestlers, matchUp }) => {
+	console.log('WRESTLERS: ', wrestlers);
 
-	const [matchUp] = useWrestlerSelect(wrestlers);
-	console.log('MATCHUP: ', matchUp);
+	// const [matchUp] = useWrestlerSelect(wrestlers);
 
 	return (
 		<div className="wrestling-ring-container">
@@ -28,7 +26,13 @@ const Ring = ({ wrestlers, moves }) => {
 						<h2 className="bottom-wrestler-name">{matchUp[1].name}</h2>
 					</div>
 				</div>
-				<button className="rumble-button">RUMBLE</button>
+
+				<button className="rumble-button">
+					<Link to="/lets-rumble" style={{textDecoration: 'none', color: 'black'}}>
+						RUMBLE
+					</Link>
+				</button>
+                
 			</div>
 			<div className="wrestlers-container">
 				<div className="wrestler-left-container">

@@ -1,6 +1,9 @@
+import useWrestlerSelect from '../src/hooks/useWrestlerSelect';
 import Header from './components/Header/Header';
 import LandingPage from './components/LandingPage/LandingPage';
 import EnterTheRing from './components/EnterTheRing/EnterTheRing';
+import MoveForm from './components/MoveForm/MoveForm';
+import LetsRumble from './components/LetsRumble/LetsRumble';
 import LoadingPage from './components/LoadingPage/LoadingPage';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -12,6 +15,8 @@ const App = () => {
 	const [wrestlers, setWrestlers] = useState([]);
 	const [moves, setMoves] = useState([]);
 	const [loading, setLoading] = useState(false);
+
+	const [matchUp] = useWrestlerSelect(wrestlers);
 
 	useEffect(() => {
 		setLoading(true);
@@ -58,9 +63,21 @@ const App = () => {
 						) : (
 							<>
 								<Header />
-								<EnterTheRing wrestlers={wrestlers} moves={moves} />
+								<EnterTheRing
+									wrestlers={wrestlers}
+									matchUp={matchUp}
+								/>
 							</>
 						)
+					}
+				/>
+				<Route
+					path="/lets-rumble"
+					element={
+						<>
+							<Header />
+							<LetsRumble matchUp={matchUp} moves={moves}/>
+						</>
 					}
 				/>
 			</Routes>

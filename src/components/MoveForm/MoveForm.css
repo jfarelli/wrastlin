@@ -1,0 +1,32 @@
+.move-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10%;
+	width: 100%;
+}
+
+.dropdown-container {
+	display: flex;
+	justify-content: center;
+	gap: 4rem;
+	width: 100%;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+select {
+	text-align: center;
+	width: 10rem;
+	font-size: 2em;
+	z-index: 1;
+}
+
+.winner-container {
+	background-color: #f3df15;
+}
