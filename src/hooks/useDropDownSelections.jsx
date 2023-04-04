@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const useDropDownSelections = (moves) => {
 	//////////////////////////////////// STRIKE MOVES ////////////////////////////////////
@@ -9,6 +9,7 @@ const useDropDownSelections = (moves) => {
 		const leftStrikePick = moves.strikeMoves.find(
 			(move) => move.name === moveSelection
 		);
+
 		setLeftStrikeSelection(leftStrikePick);
 	};
 
@@ -16,6 +17,7 @@ const useDropDownSelections = (moves) => {
 		const rightStrikePick = moves.strikeMoves.find(
 			(move) => move.name === moveSelection
 		);
+
 		setRightStrikeSelection(rightStrikePick);
 	};
 
@@ -27,6 +29,7 @@ const useDropDownSelections = (moves) => {
 		const leftHoldPick = moves.holdMoves.find(
 			(move) => move.name === moveSelection
 		);
+
 		setLeftHoldSelection(leftHoldPick);
 	};
 
@@ -45,6 +48,7 @@ const useDropDownSelections = (moves) => {
 		const leftThrowPick = moves.throwMoves.find(
 			(move) => move.name === moveSelection
 		);
+
 		setLeftThrowSelection(leftThrowPick);
 	};
 
@@ -52,6 +56,7 @@ const useDropDownSelections = (moves) => {
 		const rightThrowPick = moves.throwMoves.find(
 			(move) => move.name === moveSelection
 		);
+
 		setRightThrowSelection(rightThrowPick);
 	};
 
@@ -70,12 +75,9 @@ const useDropDownSelections = (moves) => {
 		const rightAerialPick = moves.aerialMoves.find(
 			(move) => move.name === moveSelection
 		);
+
 		setRightAerialSelection(rightAerialPick);
 	};
-
-    // useEffect(() => {
-    //     setRightAerialSelection(rightAerialPick);
-    // }, [])
 
 	return [
 		leftStrikeSelection,
@@ -98,3 +100,67 @@ const useDropDownSelections = (moves) => {
 };
 
 export default useDropDownSelections;
+
+
+
+// import { useReducer } from 'react';
+
+// const initialState = {
+// 	strikeSelections: { left: '', right: '' },
+// 	holdSelections: { left: '', right: '' },
+// 	throwSelections: { left: '', right: '' },
+// 	aerialSelections: { left: '', right: '' },
+// };
+
+// const reducer = (state, action) => {
+// 	console.log('STATE: ', state);
+// 	console.log('ACTION: ', action);
+// 	switch (action.type) {
+// 		case 'UPDATE_SELECTION':
+// 			return {
+// 				...state,
+// 				[action.moveType]: {
+// 					...state[action.moveType],
+// 					[action.selectionType]: action.selection,
+// 				},
+// 			};
+// 		default:
+// 			return state;
+// 	}
+// };
+
+// const useDropDownSelections = (moves) => {
+// 	const [state, dispatch] = useReducer(reducer, initialState);
+
+// 	const updateSelection = (moveType, selectionType, moveSelection) => {
+// 		const move = moves[`${moveType}Moves`].find(
+// 			(move) => move.name === moveSelection
+// 		);
+// 		dispatch({
+// 			type: 'UPDATE_SELECTION',
+// 			moveType,
+// 			selectionType,
+// 			selection: move,
+// 		});
+// 	};
+
+// 	return [
+// 		state.strikeSelections.left,
+// 		state.strikeSelections.right,
+// 		state.holdSelections.left,
+// 		state.holdSelections.right,
+// 		state.throwSelections.left,
+// 		state.throwSelections.right,
+// 		state.aerialSelections.left,
+// 		state.aerialSelections.right,
+// 		(moveSelection) => updateSelection('strike', 'left', moveSelection),
+// 		(moveSelection) => updateSelection('strike', 'right', moveSelection),
+// 		(moveSelection) => updateSelection('hold', 'left', moveSelection),
+// 		(moveSelection) => updateSelection('hold', 'right', moveSelection),
+// 		(moveSelection) => updateSelection('throw', 'left', moveSelection),
+// 		(moveSelection) => updateSelection('throw', 'right', moveSelection),
+// 		(moveSelection) => updateSelection('aerial', 'left', moveSelection),
+// 		(moveSelection) => updateSelection('aerial', 'right', moveSelection),
+// 	];
+// };
+// export default useDropDownSelections;

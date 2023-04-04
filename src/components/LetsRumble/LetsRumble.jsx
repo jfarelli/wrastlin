@@ -4,6 +4,7 @@ import MoveForm from '../MoveForm/MoveForm';
 const LetsRumble = ({
 	matchUp,
 	moves,
+	///////////////////////////
 	leftStrikeSelection,
 	rightStrikeSelection,
 	leftHoldSelection,
@@ -12,6 +13,7 @@ const LetsRumble = ({
 	rightThrowSelection,
 	leftAerialSelection,
 	rightAerialSelection,
+	///////////////////////////
 	leftWrestlerStrike,
 	rightWrestlerStrike,
 	leftWrestlerHold,
@@ -32,7 +34,9 @@ const LetsRumble = ({
 					/>
 				</div>
 				<MoveForm
+					matchUp={matchUp}
 					moves={moves}
+					//////////////////////////////////////////////
 					leftStrikeSelection={leftStrikeSelection}
 					rightStrikeSelection={rightStrikeSelection}
 					leftHoldSelection={leftHoldSelection}
@@ -41,6 +45,7 @@ const LetsRumble = ({
 					rightThrowSelection={rightThrowSelection}
 					leftAerialSelection={leftAerialSelection}
 					rightAerialSelection={rightAerialSelection}
+					/////////////////////////////////////////////
 					leftWrestlerStrike={leftWrestlerStrike}
 					rightWrestlerStrike={rightWrestlerStrike}
 					leftWrestlerHold={leftWrestlerHold}

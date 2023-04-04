@@ -28,6 +28,7 @@ const App = () => {
 		rightThrowSelection,
 		leftAerialSelection,
 		rightAerialSelection,
+        ///////////////////////////
 		leftWrestlerStrike,
 		rightWrestlerStrike,
 		leftWrestlerHold,
@@ -117,6 +118,7 @@ const App = () => {
 							<LetsRumble
 								matchUp={matchUp}
 								moves={moves}
+                                ////////////////////////////////////////////////////
 								leftStrikeSelection={leftStrikeSelection}
 								rightStrikeSelection={rightStrikeSelection}
 								leftHoldSelection={leftHoldSelection}
@@ -125,6 +127,7 @@ const App = () => {
 								rightThrowSelection={rightThrowSelection}
 								leftAerialSelection={leftAerialSelection}
 								rightAerialSelection={rightAerialSelection}
+                                ////////////////////////////////////////////////////
 								leftWrestlerStrike={leftWrestlerStrike}
 								rightWrestlerStrike={rightWrestlerStrike}
 								leftWrestlerHold={leftWrestlerHold}
