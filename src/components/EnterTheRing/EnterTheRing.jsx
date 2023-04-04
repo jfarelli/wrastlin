@@ -1,12 +1,8 @@
 import './EnterTheRing.css';
 import WrestlingRing from '../../assets/wrestling-ring.jpeg';
-// import useWrestlerSelect from '../../hooks/useWrestlerSelect';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Ring = ({ wrestlers, matchUp }) => {
-
-	// const [matchUp] = useWrestlerSelect(wrestlers);
+const Ring = ({ matchUp }) => {
 
 	return (
 		<div className="wrestling-ring-container">

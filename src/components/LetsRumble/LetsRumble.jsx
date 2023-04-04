@@ -1,7 +1,26 @@
 import WrestlingRing from '../../assets/wrestling-ring.jpeg';
 import MoveForm from '../MoveForm/MoveForm';
 
-const LetsRumble = ({matchUp, moves}) => {
+const LetsRumble = ({
+	matchUp,
+	moves,
+	leftStrikeSelection,
+	rightStrikeSelection,
+	leftHoldSelection,
+	rightHoldSelection,
+	leftThrowSelection,
+	rightThrowSelection,
+	leftAerialSelection,
+	rightAerialSelection,
+	leftWrestlerStrike,
+	rightWrestlerStrike,
+	leftWrestlerHold,
+	rightWrestlerHold,
+	leftWrestlerThrow,
+	rightWrestlerThrow,
+	leftWrestlerAerial,
+	rightWrestlerAerial,
+}) => {
 	return (
 		<div>
 			<div className="wrestling-ring-container">
@@ -12,7 +31,25 @@ const LetsRumble = ({matchUp, moves}) => {
 						alt="wrestling-ring"
 					/>
 				</div>
-                <MoveForm moves={moves}/>
+				<MoveForm
+					moves={moves}
+					leftStrikeSelection={leftStrikeSelection}
+					rightStrikeSelection={rightStrikeSelection}
+					leftHoldSelection={leftHoldSelection}
+					rightHoldSelection={rightHoldSelection}
+					leftThrowSelection={leftThrowSelection}
+					rightThrowSelection={rightThrowSelection}
+					leftAerialSelection={leftAerialSelection}
+					rightAerialSelection={rightAerialSelection}
+					leftWrestlerStrike={leftWrestlerStrike}
+					rightWrestlerStrike={rightWrestlerStrike}
+					leftWrestlerHold={leftWrestlerHold}
+					rightWrestlerHold={rightWrestlerHold}
+					leftWrestlerThrow={leftWrestlerThrow}
+					rightWrestlerThrow={rightWrestlerThrow}
+					leftWrestlerAerial={leftWrestlerAerial}
+					rightWrestlerAerial={rightWrestlerAerial}
+				/>
 				<div className="wrestlers-container">
 					<div className="wrestler-left-container">
 						<img
@@ -29,7 +66,7 @@ const LetsRumble = ({matchUp, moves}) => {
 						/>
 					</div>
 				</div>
-                <div></div>
+				<div></div>
 			</div>
 		</div>
 	);
