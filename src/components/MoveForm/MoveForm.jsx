@@ -112,41 +112,75 @@ const MoveForm = ({
 		);
 	});
 
+	const changeBackgroundColor = (e) => {
+        e.target.style.backgroundColor = '#f3df15';
+	};
+
+    const selectedElement = document.querySelectorAll('select');
+
+    for (let i = 0; i < selectedElement.length; i++) {
+        selectedElement[i].addEventListener('change', changeBackgroundColor)
+    }
+
 	return (
 		<div className="move-form">
 			<div className="dropdown-container">
 				<form>
-					<select onClick={(e) => leftWrestlerStrike(e.target.value)}>
+					<select
+						onClick={(e) => leftWrestlerStrike(e.target.value)}
+						onChange={changeBackgroundColor}
+					>
 						<option value="">Strike Move</option>
 						{strikeMoves}
 					</select>
-					<select onClick={(e) => leftWrestlerHold(e.target.value)}>
+					<select
+						onClick={(e) => leftWrestlerHold(e.target.value)}
+						onChange={changeBackgroundColor}
+					>
 						<option value="">Hold Move</option>
 						{holdMoves}
 					</select>
-					<select onClick={(e) => leftWrestlerThrow(e.target.value)}>
+					<select
+						onClick={(e) => leftWrestlerThrow(e.target.value)}
+						onChange={changeBackgroundColor}
+					>
 						<option value="">Throw Move</option>
 						{throwMoves}
 					</select>
-					<select onClick={(e) => leftWrestlerAerial(e.target.value)}>
+					<select
+						onClick={(e) => leftWrestlerAerial(e.target.value)}
+						onChange={changeBackgroundColor}
+					>
 						<option value="">Aerial Move</option>
 						{aerialMoves}
 					</select>
 				</form>
 				<form>
-					<select onClick={(e) => rightWrestlerStrike(e.target.value)}>
+					<select
+						onClick={(e) => rightWrestlerStrike(e.target.value)}
+						onChange={changeBackgroundColor}
+					>
 						<option value="">Strike Move</option>
 						{strikeMoves}
 					</select>
-					<select onClick={(e) => rightWrestlerHold(e.target.value)}>
+					<select
+						onClick={(e) => rightWrestlerHold(e.target.value)}
+						onChange={changeBackgroundColor}
+					>
 						<option value="">Hold Move</option>
 						{holdMoves}
 					</select>
-					<select onClick={(e) => rightWrestlerThrow(e.target.value)}>
+					<select
+						onClick={(e) => rightWrestlerThrow(e.target.value)}
+						onChange={changeBackgroundColor}
+					>
 						<option value="">Throw Move</option>
 						{throwMoves}
 					</select>
-					<select onClick={(e) => rightWrestlerAerial(e.target.value)}>
+					<select
+						onClick={(e) => rightWrestlerAerial(e.target.value)}
+						onChange={changeBackgroundColor}
+					>
 						<option value="">Aerial Move</option>
 						{aerialMoves}
 					</select>
